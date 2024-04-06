@@ -1,8 +1,7 @@
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
-import z from "zod";
+import { z } from "zod";
 import { prisma } from "../lib/prisma";
-import { title } from "process";
 
 export async function getEvent(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
@@ -13,7 +12,7 @@ export async function getEvent(app: FastifyInstance) {
           eventId: z.string().uuid(),
         }),
         response: {
-          200: {
+          200: z.object({
             event: z.object({
               id: z.string().uuid(),
               title: z.string(),
@@ -22,7 +21,7 @@ export async function getEvent(app: FastifyInstance) {
               maximumAttendees: z.number().int().nullable(),
               attendeesAmount: z.number().int(),
             }),
-          },
+          }),
         },
       },
     },
