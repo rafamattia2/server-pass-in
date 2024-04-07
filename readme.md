@@ -10,6 +10,12 @@ Os participantes inscritos podem emitir uma credencial para check-in no dia do e
 
 O sistema fará um scan da credencial do participante para permitir a entrada no evento.
 
+### Tecnologias utilizadas
+
+- [Typescript](https://www.typescriptlang.org/)
+- [Fastify](https://fastify.dev/docs/latest/)
+- [Prisma ORM](https://www.prisma.io/docs)
+
 ## Requisitos
 
 ### Requisitos funcionais
@@ -39,6 +45,27 @@ O sistema fará um scan da credencial do participante para permitir a entrada no
 
 Nessa aplicação vamos utilizar banco de dados relacional (SQL). Para ambiente de desenvolvimento seguiremos com o SQLite pela facilidade do ambiente.
 
+### Para testar as requests
+
+Basta importar o arquivo "insomnia-server-pass-in" no aplicativo do [Insomnia](https://nlw-unite-nodejs.onrender.com/docs/static/index.html) para conseguir testar as request.
+
 ## Diagrama ERD
 
-![Diagrama ERD](./erd.svg){width=400rem}
+![Diagrama ERD](./erd.svg){width=200rem}
+
+# Como executar o projeto
+
+```bash
+# clonar repositório
+git clone https://github.com/rafamattia2/server-pass-in.git
+
+# instale as dependências (certifique-se de possuir o node em sua máquina)
+npm install
+
+# para rodar o projeto
+npm run dev
+# ou
+npm run start
+
+
+```
